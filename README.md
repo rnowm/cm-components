@@ -1,2 +1,3 @@
-# cm-components
-Set of react components
+# my-app
+
+Describe my-app here.
