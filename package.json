@@ -1,5 +1,5 @@
 {
-  "name": "cm-components",
+  "name": "cmr-components",
   "version": "0.1.0",
   "author": "rnowm",
   "private": false,
@@ -8,6 +8,6 @@
   "bin": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rnowm/cm-components.git"
+    "url": "https://github.com/rnowm/cmr-components.git"
   }
 }
