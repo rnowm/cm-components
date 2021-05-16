@@ -1,22 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import Logo from "./images/logo.svg";
-import PrevIcon from "./images/arrow-left.svg";
+import Logo from './images/logo.svg';
+import PrevIcon from './images/arrow-left.svg';
 
-import { Button } from "./Button";
-import { Row } from "./Layout";
-import { Label } from "./Typography";
+import { Button } from './Button';
+import { Row } from './Layout';
+import { Label } from './Typography';
 
-import { device } from "../utils/variables";
+import { device } from '../utils/variables';
 
 const HeaderWrapper = styled.header`
   width: 100%;
   top: 0px;
   z-index: 60;
-  position: fixed;
+  position: ${(props) => (props.absolute ? 'absolute' : 'fixed')};
   background: red;
   min-width: 320px;
 `;
@@ -42,8 +42,8 @@ const HeaderContainer = styled.div`
   }
 `;
 
-export const Header = ({ logo, back, title }) => (
-  <HeaderWrapper>
+export const Header = ({ logo, back, title, absolute }) => (
+  <HeaderWrapper absolute={absolute}>
     <HeaderContainer>
       {back && (
         <Row fit>

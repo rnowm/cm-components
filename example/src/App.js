@@ -16,10 +16,13 @@ import {
   Button,
   Rate,
   Progress,
-  // Thumbnail,
+  Image,
+  Thumbnail,
 } from 'cmr-components';
 import 'cmr-components/dist/index.css';
 import Back from './images/arrow-left.svg';
+import Movie from './mocks/movie.json';
+import Broken from './mocks/broken_url.json';
 
 const App = () => {
   return (
@@ -239,7 +242,48 @@ const App = () => {
               <Example
                 last
                 name="Responsive"
-                comment="Reduce/increase your browser size to see how the layout changes from Row to Column, when reaching 'tablet' breackpoint. Ather posible breakpoint values are: mobileS (320px), mobileM (425px), mobileL (550px), mobileXL (640px), tablet (768px), tabletL (900px), laptop (1024px), laptopL (1118px), desktop (1400px) and desktopL (2560px)"
+                comment={
+                  <Column>
+                    <P>
+                      Reduce/increase your browser size to see how the layout
+                      changes from Row to Column, when reaching 'tablet'
+                      breackpoint.
+                    </P>
+                    <P>Other posible breakpoint values are:</P>
+                    <Column marginLeft>
+                      <P>
+                        <b>- mobileS</b> (320px),
+                      </P>
+                      <P>
+                        <b>- mobileM</b> (425px),
+                      </P>
+                      <P>
+                        <b>- mobileL</b> (550px),
+                      </P>
+                      <P>
+                        <b>- mobileXL</b> (640px),
+                      </P>
+                      <P>
+                        <b>- tablet</b> (768px),
+                      </P>
+                      <P>
+                        <b>- tabletL</b> (900px),
+                      </P>
+                      <P>
+                        <b>- laptop</b> (1024px),
+                      </P>
+                      <P>
+                        <b>- laptopL</b> (1118px),
+                      </P>
+                      <P>
+                        <b>- desktop</b> (1400px)
+                      </P>
+                      <P>
+                        <b>- desktopL</b> (2560px)
+                      </P>
+                    </Column>
+                  </Column>
+                }
                 prepend="import { Row, Circle } from 'cmr-components';"
                 code={`<Row bkg="gold" toColumn="tablet" paddingAll>
     <Circle radius="10" bkg="white" />
@@ -291,17 +335,45 @@ import Back from './images/arrow-left';`}
               <Row marginBottom="30">
                 <H1>Thumbnails</H1>
               </Row>
-              {/* <Thumbnail movie={null} /> */}
-
-              {/* <Example
-                last
-                name="Icon button"
-                prepend={`import { Button } from 'cmr-components';
-                import Back from './images/arrow-left';`}
-                code={`<Button icon={Back} />`}
+              <Example
+                name="Image"
+                prepend={`import { Image } from 'cmr-components';`}
+                code={`<Image movie={Movie} />`}
                 gray
-                scope={{ Button, Back }}
-              /> */}
+                scope={{ Image, Movie }}
+              />
+              <Example
+                name="Home Thumbnail"
+                comment="Animated and contains Rating and title"
+                prepend={`import { Thumbnail } from 'cmr-components';`}
+                code={`<Thumbnail movie={Movie} />`}
+                gray
+                scope={{ Thumbnail, Movie }}
+              />
+              <Example
+                last
+                name="Details Thumbnail"
+                comment="Static image with fewer options than in the Home page, adding 'details' prop."
+                prepend={`import { Thumbnail } from 'cmr-components';`}
+                code={`<Thumbnail details movie={Movie} />`}
+                gray
+                scope={{ Thumbnail, Movie }}
+              />
+            </Column>
+
+            <Column bkg="white" paddingAll radius="8" marginTop="40">
+              <Row marginBottom="30">
+                <H1>Header</H1>
+              </Row>
+
+              <Example
+                name="With title"
+                commnet="Adding 'demo' option as defeult header has fixed position"
+                prepend={`import { Header } from 'cmr-components';`}
+                code={`<Header demo title="title"/>`}
+                gray
+                scope={{ Header }}
+              />
             </Column>
           </Column>
         </Content>

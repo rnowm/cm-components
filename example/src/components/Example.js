@@ -14,7 +14,7 @@ export const Example = ({ name, code, scope, prepend, last, comment }) => (
       )}
       {comment && (
         <Row marginBottom="30" marginTop="-20">
-          <Label>{comment}</Label>
+          {comment}
         </Row>
       )}
       <LiveError style={{ fontSize: 16, lineHeight: 1.3 }} />
