@@ -53,6 +53,7 @@
   "dependencies": {
     "react-live": "^2.2.3",
     "react-router-dom": "^5.2.0",
+    "react-scroll": "^1.8.2",
     "styled-components": "^5.3.0"
   }
 }

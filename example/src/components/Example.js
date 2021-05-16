@@ -35,9 +35,6 @@ export const Example = ({ name, code, scope, prepend, last, comment }) => (
 
 const PreviewWrapper = styled.div`
   padding-bottom: 30px;
-  & > div {
-    width: calc(100% - 40px);
-  }
 `;
 
 const CodeWrapper = styled.div`

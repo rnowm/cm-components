@@ -1,16 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import { Color } from "../utils/variables";
-import { Circle } from "./Layout";
-import { Label } from "./Typography";
+import { Color } from '../utils/variables';
+import { Circle } from './Layout';
+import { Label } from './Typography';
 
 const ProgressWrapper = styled.div`
   display: flex;
   position: relative;
-  width: ${(props) => props.size + "px"};
-  height: ${(props) => props.size + "px"};
+  width: ${(props) => props.size + 'px'};
+  height: ${(props) => props.size + 'px'};
 `;
 
 const ProgressSVG = styled.svg`
@@ -19,12 +19,12 @@ const ProgressSVG = styled.svg`
   circle {
     stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear;
-    stroke: ${(props) => Color(props.color || "gold")};
+    stroke: ${(props) => Color(props.color || 'gold')};
     opacity: 0.4;
     stroke-width: 0.5em;
 
     &.bar {
-      stroke: ${(props) => Color(props.color || "gold")};
+      stroke: ${(props) => Color(props.color || 'gold')};
       opacity: 1;
       stroke-dashoffset: ${(props) => props.pct};
     }
@@ -45,12 +45,12 @@ const LabelWrapper = styled.div`
 const getAutoColor = (value) => {
   if (value > 25) {
     if (value > 75) {
-      return "green";
+      return 'green';
     } else {
-      return "gold";
+      return 'gold';
     }
   } else {
-    return "red";
+    return 'red';
   }
 };
 
@@ -60,7 +60,7 @@ export const Progress = ({ value, autoColor, color, textColor }) => {
   const c = Math.PI * (r * 2);
   const pct = ((100 - value) / 100) * c;
 
-  color = autoColor ? getAutoColor(value) : color || "gold";
+  color = autoColor ? getAutoColor(value) : color || 'gold';
 
   return (
     <ProgressWrapper size={size}>
@@ -81,11 +81,11 @@ export const Progress = ({ value, autoColor, color, textColor }) => {
           cx={size / 2}
           cy={size / 2}
           fill="transparent"
-          stroke-dasharray="188.5"
+          strokeDasharray="188.5"
         ></circle>
       </ProgressSVG>
       <LabelWrapper>
-        <Label large bold color={textColor || "white"}>
+        <Label large bold color={textColor || 'white'}>
           {value}
         </Label>
       </LabelWrapper>
@@ -94,7 +94,7 @@ export const Progress = ({ value, autoColor, color, textColor }) => {
 };
 
 const RateWrapper = styled(Circle)`
-  position: ${(props) => (props.relative ? "relative" : "absolute")};
+  position: ${(props) => (props.relative ? 'relative' : 'absolute')};
   top: 3px;
   right: 3px;
   border: 2px solid white;
@@ -112,9 +112,9 @@ export const Rate = ({
     radius="15"
     shadow={shadow}
     relative={relative}
-    bkg={autoColor ? getAutoColor(value * 10) : color || "gold"}
+    bkg={autoColor ? getAutoColor(value * 10) : color || 'gold'}
   >
-    <Label small bold color={textColor || "white"}>
+    <Label small bold color={textColor || 'white'}>
       {value}
     </Label>
   </RateWrapper>
