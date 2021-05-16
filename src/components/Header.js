@@ -38,7 +38,7 @@ const HeaderContainer = styled.div`
   }
 `;
 
-export const Header = ({ logo, back, title, relative }) => (
+export const Header = ({ logo, back, title, relative, children }) => (
   <HeaderWrapper relative={relative}>
     <HeaderContainer>
       {back && (
@@ -55,6 +55,7 @@ export const Header = ({ logo, back, title, relative }) => (
           </Label>
         </Row>
       )}
+      {children}
       {logo && (
         <Link to="/">
           <img

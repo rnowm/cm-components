@@ -28,7 +28,9 @@ const App = () => {
   return (
     <AppWrapper>
       <MainWrapper>
-        <Header title="CMR Components" />
+        <Header title="CMR Components">
+        <a href="#hey">hey</a>
+        </Header>
         <Content>
           <Column paddingAll="40">
             <Column bkg="white" paddingAll radius="8">
@@ -37,30 +39,31 @@ const App = () => {
               </Row>
               <Example
                 prepend="import { H1 } from 'cmr-components';"
-                code="<H1>H1</H1>"
+                code="<H1>Heading 1</H1>"
                 scope={{ H1 }}
               />
               <Example
                 prepend="import { H2 } from 'cmr-components';"
-                code="<H2>H2</H2>"
+                code="<H2>Heading 2</H2>"
                 scope={{ H2 }}
               />
               <Example
                 prepend="import { H3 } from 'cmr-components';"
-                code="<H3>H3</H3>"
+                code="<H3>Heading 3</H3>"
                 scope={{ H3 }}
               />
               <Example
                 prepend="import { Label } from 'cmr-components';"
-                code="<Label>Label</Label>"
+                code="<Label>Default Label</Label>"
                 scope={{ Label }}
               />
               <Example
                 prepend="import { Label } from 'cmr-components';"
-                code='<Label color="blue" bold large>Label</Label>'
+                code='<Label color="blue" bold large>Custom Label</Label>'
                 scope={{ Label }}
               />
               <Example
+                name="Paragraph"
                 last
                 prepend="import { P } from 'cmr-components';"
                 code={`<>
@@ -314,20 +317,28 @@ import Back from './images/arrow-left';`}
               <Row marginBottom="30">
                 <H1>Progress and Rating indicators</H1>
               </Row>
-              <Rate autoColor value={10} />
-              <Rate color="purple" value={4.5} />
               <Example
-                last
                 name="Progress"
                 prepend={`import { Progress } from 'cmr-components';`}
-                code={`<Row>
-  <Progress color="purple" value={10} />
-  <Progress autocolor value={10} />
+                code={`<Row bkg="gray" fade="0.3" radius="10" paddingAll>
+  <Progress color="purple" textColor="purple" value={10} />
+  <Progress autoColor value={10} />
   <Progress autoColor value={50} />
   <Progress autoColor value={80} />
 </Row>`}
-                gray
                 scope={{ Progress, Row }}
+              />
+              <Example
+                last
+                name="rate"
+                prepend={`import { Progress } from 'cmr-components';`}
+                code={`<Row bkg="gray" fade="0.3" radius="10" paddingAll>
+  <Rate color="yellow" shadow relative textColor="red" value={1.5} />
+  <Rate autoColor relative value={1.5} />
+  <Rate autoColor relative value={3} />
+  <Rate autoColor relative value={9} />
+</Row>`}
+                scope={{ Rate, Row }}
               />
             </Column>
 
