@@ -6,6 +6,8 @@
 
 Set of react components for a test site (Cool Movies)
 
+[See the Styleguide](https://rnowm.github.io/cmr-components/)
+
 ## Install
 
 ```bash
