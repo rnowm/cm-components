@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, H3, Row, Label } from 'cmr-components';
+import { Column, H3, Row } from 'cmr-components';
 import styled from 'styled-components';
 
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live';
