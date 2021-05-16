@@ -1,5 +1,5 @@
-export { Button } from './components/Button'
-export { Header } from './components/Header'
+export { Button } from './components/Button';
+export { Header } from './components/Header';
 export {
   Grid,
   Content,
@@ -8,9 +8,9 @@ export {
   AppWrapper,
   Column,
   Row,
-  Circle
+  Circle,
   HR,
-} from './components/Layout'
-export { Thumbnail } from './components/Thumbnail'
-export { Progress, Rate } from './components/Progress'
-export { H1, H2, H3, P, Label } from './components/Typography'
+} from './components/Layout';
+export { Thumbnail, Image } from './components/Thumbnail';
+export { Progress, Rate } from './components/Progress';
+export { H1, H2, H3, P, Label } from './components/Typography';
