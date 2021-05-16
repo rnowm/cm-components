@@ -28,7 +28,7 @@ const App = () => {
   return (
     <AppWrapper>
       <MainWrapper>
-        <Header title="CMR Components" logo />
+        <Header title="CMR Components" />
         <Content>
           <Column paddingAll="40">
             <Column bkg="white" paddingAll radius="8">
@@ -366,14 +366,14 @@ import Back from './images/arrow-left';`}
                 <H1>Header</H1>
               </Row>
 
-              {/* <Example
-                name="With title"
-                commnet="Adding 'absolute' option as defeult header has fixed position, and would not stick in place for this demo"
+              <Example
+                last
+                commnent="Adding 'reletive' option as defeult header has fixed position, and would not stick in place for this demo"
                 prepend={`import { Header } from 'cmr-components';`}
-                code={`<Header absolute title="Title" logo/>`}
+                code={`<Header relative title="Title"/>`}
                 gray
                 scope={{ Header }}
-              /> */}
+              />
             </Column>
           </Column>
         </Content>

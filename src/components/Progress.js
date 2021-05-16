@@ -43,7 +43,15 @@ const LabelWrapper = styled.div`
 `;
 
 const getAutoColor = (value) => {
-  return value > 75 ? "green" : value > 25 ? "gold" : "red";
+  if (value > 25) {
+    if (value > 75) {
+      return "green";
+    } else {
+      return "gold";
+    }
+  } else {
+    return "red";
+  }
 };
 
 export const Progress = ({ value, autoColor, color, textColor }) => {
@@ -52,7 +60,7 @@ export const Progress = ({ value, autoColor, color, textColor }) => {
   const c = Math.PI * (r * 2);
   const pct = ((100 - value) / 100) * c;
 
-  color = autoColor && getAutoColor(value);
+  color = autoColor ? getAutoColor(value) : color || "gold";
 
   return (
     <ProgressWrapper size={size}>
@@ -86,16 +94,24 @@ export const Progress = ({ value, autoColor, color, textColor }) => {
 };
 
 const RateWrapper = styled(Circle)`
-  position: absolute;
+  position: ${(props) => (props.relative ? "relative" : "absolute")};
   top: 3px;
   right: 3px;
   border: 2px solid white;
 `;
 
-export const Rate = ({ value, autoColor, color, textColor }) => (
+export const Rate = ({
+  value,
+  autoColor,
+  color,
+  textColor,
+  relative,
+  shadow,
+}) => (
   <RateWrapper
     radius="15"
-    shadow
+    shadow={shadow}
+    relative={relative}
     bkg={autoColor ? getAutoColor(value * 10) : color || "gold"}
   >
     <Label small bold color={textColor || "white"}>
@@ -116,4 +132,6 @@ Rate.propTypes = {
   color: PropTypes.string,
   textColor: PropTypes.string,
   autoColor: PropTypes.bool,
+  relative: PropTypes.bool,
+  shadow: PropTypes.bool,
 };
